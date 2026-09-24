@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "leistungen": "Services",
+    "signalweg": "The Signal Path",
+    "karriere": "Careers",
+    "team": "Team",
+    "kontakt": "Contact",
+    "cta": "Request a project"
+  },
+  "hero": {
+    "badgeIso": "ISO 9001",
+    "badgeDvgw": "DVGW",
+    "badgeTelekom": "Deutsche Telekom · Installation Partner",
+    "titleLine1": "Precision fiber-optic deployment.",
+    "titleAccent": "From light pulse to activation.",
+    "subtitle": "Certified installation partner for network levels 3–5: civil works, splicing and in-house wiring — planned, documented and OTDR-certified to DIN/ISO.",
+    "ctaPrimary": "Request a project",
+    "ctaSecondary": "Careers · 1-click application",
+    "scrollHint": "The signal path begins"
+  },
+  "trustBar": {
+    "items": [
+      "Installation partner for network operators & housing associations",
+      "In-house team: civil works, splicing, project management",
+      "Documentation to DIN/ISO standard",
+      "24/7 dispatch for active contracts"
+    ]
+  },
+  "signalJourney": {
+    "eyebrow": "The Signal Path",
+    "title": "Six stations, one light pulse.",
+    "subtitle": "From the distribution point to the wall socket — every step planned, measured and documented.",
+    "toggleStoryline": "Signal path",
+    "toggleProtocol": "Technical protocol",
+    "steps": [
+      {
+        "title": "Signal origin",
+        "description": "The light pulse leaves the Point of Presence (PoP) and enters the fiber route.",
+        "specs": ["1310 / 1550 nm test wavelength", "PoP feed-in documented"]
+      },
+      {
+        "title": "The route",
+        "description": "Cable laid via micro-trenching (NE3) or air-blowing along the planned route.",
+        "specs": ["NE3 civil works", "Micro-trenching & cable blowing"]
+      },
+      {
+        "title": "The fusion",
+        "description": "Precision arc fusion joins two fiber ends with minimal loss — measured and logged immediately.",
+        "specs": ["< 0.02 dB loss", "DIN EN 61300"]
+      },
+      {
+        "title": "The penetration",
+        "description": "Controlled, sealed building entry via the access point for line technology (APL).",
+        "specs": ["Sealed building entry", "APL installation"]
+      },
+      {
+        "title": "The last mile",
+        "description": "In-house riser cabling (NE4) distributes the signal to every unit in the building.",
+        "specs": ["NE4 in-house cabling", "MDU / housing associations"]
+      },
+      {
+        "title": "The activation",
+        "description": "TA/OTO socket installation and final OTDR certification complete the route.",
+        "specs": ["TA/OTO socket install", "OTDR acceptance test"]
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Network levels 3 to 5 — from a single source.",
+    "subtitle": "Four core services, one point of contact for the entire build-out.",
+    "items": [
+      {
+        "title": "Civil works & route construction",
+        "description": "Horizontal directional drilling (HDD) and micro-trenching for network level 3 — from route planning to cable placement."
+      },
+      {
+        "title": "Splicing & measurement",
+        "description": "Precision fusion splicing and OTDR protocol creation to DIN/ISO — every route measured and signed off."
+      },
+      {
+        "title": "In-house installation",
+        "description": "NE4 riser cabling for multi-family buildings — coordinated with property managers and housing associations."
+      },
+      {
+        "title": "24/7 service & fault clearance",
+        "description": "Field dispatch team for fault reports on active operator contracts — ready around the clock."
+      }
+    ]
+  },
+  "otdr": {
+    "eyebrow": "Interactive",
+    "title": "OTDR signal simulator",
+    "subtitle": "Move the marker along the 5 km route and watch backscatter, splice loss and connector attenuation update in real time.",
+    "distanceLabel": "Distance",
+    "eventLabel": "Event at this position",
+    "lossLabel": "Cumulative loss",
+    "events": {
+      "launch": "Launch (PoP)",
+      "splice1": "Splice 1",
+      "splice2": "Splice 2",
+      "connector": "Connector (APL)",
+      "end": "Route end (OTO)"
+    }
+  },
+  "fleet": {
+    "eyebrow": "Fleet & equipment",
+    "title": "Equipment for every build stage.",
+    "subtitle": "Our own equipment instead of subcontracting it out — shorter lead times, reliable schedules.",
+    "items": [
+      { "title": "Splicing vehicles", "description": "Mobile splicing labs for work right at the route." },
+      { "title": "Cable blowing units", "description": "Pneumatic blowing technology for micro- and mini-ducts." },
+      { "title": "VIAVI / EXFO OTDR meters", "description": "Certified measurement equipment for gapless acceptance protocols." },
+      { "title": "Micro-trenching rigs", "description": "Low-impact civil works with minimal surface disruption." }
+    ]
+  },
+  "careerTeaser": {
+    "eyebrow": "Careers",
+    "title": "We're hiring in the field.",
+    "subtitle": "Splicing technician, civil works specialist, site manager — apply in three steps, no PDF résumé required.",
+    "cta": "Apply in 3 steps",
+    "roles": ["Splicing technician", "Civil works specialist", "Site manager"]
+  },
+  "finalCta": {
+    "title": "Ready for your fiber project?",
+    "subtitle": "Whether it's a network operator tender or a housing association contract — we respond within one business day.",
+    "cta": "Request a project"
+  },
+  "footer": {
+    "tagline": "Precision fiber-optic deployment – from light pulse to activation.",
+    "columns": {
+      "company": { "title": "Company", "links": ["Services", "The Signal Path", "Team", "Careers"] },
+      "legal": { "title": "Legal", "links": ["Imprint", "Privacy Policy"] },
+      "contact": { "title": "Contact" }
+    },
+    "address": "Reuenberg 67, 45357 Essen, Germany",
+    "phone": "+49 162 686 1853",
+    "email": "abdel@dsf-media.de",
+    "copyright": "DSF Media GmbH. All rights reserved."
+  },
+  "cookieBanner": {
+    "text": "We only use technically necessary cookies. Optional cookies (e.g. for analytics) are only set with your consent.",
+    "acceptAll": "Accept all",
+    "acceptNecessary": "Necessary only",
+    "settings": "Settings"
+  },
+  "kontaktPage": {
+    "eyebrow": "Contact",
+    "title": "Request a project & get in touch.",
+    "subtitle": "Whether it's a network operator tender, a housing association project or a fault report — our team responds within one business day.",
+    "requestTypes": ["New build project", "Existing network / maintenance", "Fault / emergency dispatch", "Partnership"],
+    "form": {
+      "company": "Company",
+      "companyPlaceholder": "Your company",
+      "name": "Contact person",
+      "namePlaceholder": "First and last name",
+      "email": "Email",
+      "emailPlaceholder": "name@company.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+49 …",
+      "message": "Project description",
+      "messagePlaceholder": "Network level, scope, desired timeline …",
+      "upload": "Upload bill of quantities / attachment (optional)",
+      "submit": "Send request",
+      "sent": "Request sent"
+    },
+    "emergency": {
+      "title": "24/7 emergency dispatch",
+      "description": "Fault reporting for active network operator contracts, reachable around the clock."
+    },
+    "mapPlaceholder": "Map excerpt · Service area Essen & NRW"
+  },
+  "teamPage": {
+    "eyebrow": "The team",
+    "title": "The people behind every splice.",
+    "subtitle": "Experience in civil works, splicing and project management — bundled into one practiced team.",
+    "groups": {
+      "leadership": "Management",
+      "technical": "Project management & technical",
+      "admin": "Administration & dispatch"
+    },
+    "placeholderNote": "Placeholder data · sample layout"
+  },
+  "leistungenPage": {
+    "eyebrow": "Services",
+    "title": "Four service areas, one installation partner.",
+    "subtitle": "From initial route planning to OTDR sign-off — we handle the full build-out or individual work packages."
+  },
+  "karrierePage": {
+    "eyebrow": "Careers",
+    "title": "Apply in three steps.",
+    "subtitle": "No PDF upload, no waiting — optimized for applying straight from the job site.",
+    "steps": {
+      "1": { "title": "Who you are", "fields": ["Name", "Phone", "Location"] },
+      "2": { "title": "Your role", "fields": ["Desired position", "Experience"] },
+      "3": { "title": "Availability", "fields": ["Available from", "Driving licence?"] }
+    },
+    "roles": ["Splicing technician", "Civil works specialist", "Site manager", "Other role"],
+    "submit": "Submit application",
+    "next": "Next",
+    "back": "Back"
+  }
+}

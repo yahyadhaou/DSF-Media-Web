@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "leistungen": "Leistungen",
+    "signalweg": "Der Signalweg",
+    "karriere": "Karriere",
+    "team": "Team",
+    "kontakt": "Kontakt",
+    "cta": "Projekt anfragen"
+  },
+  "hero": {
+    "badgeIso": "ISO 9001",
+    "badgeDvgw": "DVGW",
+    "badgeTelekom": "Deutsche Telekom · Montagepartner",
+    "titleLine1": "Präzision im Glasfaserausbau.",
+    "titleAccent": "Vom Lichtimpuls bis zur Aktivierung.",
+    "subtitle": "Zertifizierter Montagepartner für Netzebene 3–5: Tiefbau, Spleißtechnik und Inhouse-Verkabelung — geplant, dokumentiert und OTDR-zertifiziert nach DIN/ISO.",
+    "ctaPrimary": "Projekt anfragen",
+    "ctaSecondary": "Karriere · 1-Click Bewerbung",
+    "scrollHint": "Der Signalweg beginnt"
+  },
+  "trustBar": {
+    "items": [
+      "Montagepartner für Netzbetreiber & Wohnungswirtschaft",
+      "Eigenes Team: Tiefbau, Spleißtechnik, Projektleitung",
+      "Dokumentation nach DIN/ISO-Standard",
+      "24/7-Notdienst für aktive Verträge"
+    ]
+  },
+  "signalJourney": {
+    "eyebrow": "Der Signalweg",
+    "title": "Sechs Stationen, ein Lichtimpuls.",
+    "subtitle": "Vom Verteilerpunkt bis zur Dose — jeder Schritt geplant, gemessen und dokumentiert.",
+    "toggleStoryline": "Signalweg",
+    "toggleProtocol": "Technisches Protokoll",
+    "steps": [
+      {
+        "title": "Signal-Ursprung",
+        "description": "Der Lichtimpuls verlässt den Point of Presence (PoP) und tritt in die Glasfaserstrecke ein.",
+        "specs": ["1310 / 1550 nm Testwellenlänge", "PoP-Einspeisung dokumentiert"]
+      },
+      {
+        "title": "Die Trasse",
+        "description": "Kabelverlegung im Mikrograben (NE3) oder per Einblastechnik entlang der geplanten Trasse.",
+        "specs": ["NE3-Tiefbau", "Mikrograben & Kabeleinblasung"]
+      },
+      {
+        "title": "Die Fusion",
+        "description": "Präzisions-Lichtbogenschweißung führt zwei Faserenden verlustarm zusammen — sofort messtechnisch dokumentiert.",
+        "specs": ["< 0,02 dB Dämpfung", "DIN EN 61300"]
+      },
+      {
+        "title": "Die Durchdringung",
+        "description": "Kontrollierter, abgedichteter Gebäudeeintritt über den Abschlusspunkt Linientechnik (APL).",
+        "specs": ["Abgedichteter Gebäudeeintritt", "APL-Installation"]
+      },
+      {
+        "title": "Die Letzte Meile",
+        "description": "Inhouse-Steigleitung (NE4) verteilt das Signal auf alle Einheiten im Gebäude.",
+        "specs": ["NE4 Inhouse-Verkabelung", "MDU / Wohnungswirtschaft"]
+      },
+      {
+        "title": "Die Aktivierung",
+        "description": "TA/OTO-Dosenmontage und abschließende OTDR-Zertifizierung schließen die Strecke ab.",
+        "specs": ["TA/OTO-Dosenmontage", "OTDR-Abnahmemessung"]
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Leistungen",
+    "title": "Netzebene 3 bis 5 — aus einer Hand.",
+    "subtitle": "Vier Kernleistungen, ein Ansprechpartner für die gesamte Ausbaustrecke.",
+    "items": [
+      {
+        "title": "Tiefbau & Trassenbau",
+        "description": "Horizontalspülbohrung (HDD) und Mikrograben-Verlegung für Netzebene 3 — von der Trassenplanung bis zur Kabeleinbringung."
+      },
+      {
+        "title": "Spleiß- & Messtechnik",
+        "description": "Präzisions-Fusionsspleißung und OTDR-Protokollerstellung nach DIN/ISO — jede Strecke messtechnisch abgenommen."
+      },
+      {
+        "title": "Inhouse-Installation",
+        "description": "NE4-Steigleitungsverkabelung für Mehrfamilienhäuser — abgestimmt mit Hausverwaltungen und Wohnungswirtschaft."
+      },
+      {
+        "title": "24/7 Service & Entstörung",
+        "description": "Field-Dispatch-Team für Störfallmeldungen aktiver Netzbetreiber-Verträge — rund um die Uhr einsatzbereit."
+      }
+    ]
+  },
+  "otdr": {
+    "eyebrow": "Interaktiv",
+    "title": "OTDR-Signalsimulator",
+    "subtitle": "Bewegen Sie den Marker entlang der 5-km-Strecke und beobachten Sie Rückstreuung, Spleißverluste und Steckerdämpfung in Echtzeit.",
+    "distanceLabel": "Distanz",
+    "eventLabel": "Ereignis an dieser Position",
+    "lossLabel": "Kumulierte Dämpfung",
+    "events": {
+      "launch": "Einspeisung (PoP)",
+      "splice1": "Spleißstelle 1",
+      "splice2": "Spleißstelle 2",
+      "connector": "Steckverbinder (APL)",
+      "end": "Streckenende (OTO)"
+    }
+  },
+  "fleet": {
+    "eyebrow": "Fuhrpark & Technik",
+    "title": "Ausstattung für jede Ausbaustufe.",
+    "subtitle": "Eigene Technik statt Fremdvergabe — kurze Wege, verlässliche Termine.",
+    "items": [
+      { "title": "Spleißfahrzeuge", "description": "Mobile Spleißlabore für Einsätze direkt an der Trasse." },
+      { "title": "Kabeleinblasgeräte", "description": "Pneumatische Einblastechnik für Micro- und Mini-Ducts." },
+      { "title": "VIAVI / EXFO OTDR-Messgeräte", "description": "Zertifizierte Messtechnik für lückenlose Abnahmeprotokolle." },
+      { "title": "Mikrograben-Fräsen", "description": "Schonender Tiefbau mit minimalem Eingriff in die Oberfläche." }
+    ]
+  },
+  "careerTeaser": {
+    "eyebrow": "Karriere",
+    "title": "Wir suchen Verstärkung im Feld.",
+    "subtitle": "Spleißtechniker:in, Tiefbaufacharbeiter:in, Bauleiter:in — Bewerbung in drei Schritten, ganz ohne PDF-Lebenslauf.",
+    "cta": "Jetzt in 3 Schritten bewerben",
+    "roles": ["Spleißtechniker:in", "Tiefbaufacharbeiter:in", "Bauleiter:in"]
+  },
+  "finalCta": {
+    "title": "Bereit für Ihr Glasfaser-Projekt?",
+    "subtitle": "Ob Netzbetreiber-Ausschreibung oder Wohnungswirtschaft-Auftrag — wir melden uns innerhalb eines Werktags.",
+    "cta": "Projekt anfragen"
+  },
+  "footer": {
+    "tagline": "Präzision im Glasfaserausbau – vom Lichtimpuls bis zur Aktivierung.",
+    "columns": {
+      "company": { "title": "Unternehmen", "links": ["Leistungen", "Der Signalweg", "Team", "Karriere"] },
+      "legal": { "title": "Rechtliches", "links": ["Impressum", "Datenschutz"] },
+      "contact": { "title": "Kontakt" }
+    },
+    "address": "Reuenberg 67, 45357 Essen",
+    "phone": "+49 162 686 1853",
+    "email": "abdel@dsf-media.de",
+    "copyright": "DSF Media GmbH. Alle Rechte vorbehalten."
+  },
+  "cookieBanner": {
+    "text": "Wir verwenden nur technisch notwendige Cookies. Optionale Cookies (z. B. für Analyse) setzen wir erst nach Ihrer Zustimmung.",
+    "acceptAll": "Alle akzeptieren",
+    "acceptNecessary": "Nur notwendige",
+    "settings": "Einstellungen"
+  },
+  "kontaktPage": {
+    "eyebrow": "Kontakt",
+    "title": "Projekt anfragen & Kontakt aufnehmen.",
+    "subtitle": "Ob Netzbetreiber-Ausschreibung, Wohnungswirtschaft-Projekt oder Störungsfall — unser Team meldet sich innerhalb eines Werktags.",
+    "requestTypes": ["Neubauprojekt", "Bestandsnetz / Wartung", "Störung / Notdienst", "Partnerschaft"],
+    "form": {
+      "company": "Firma",
+      "companyPlaceholder": "Ihr Unternehmen",
+      "name": "Ansprechpartner",
+      "namePlaceholder": "Vor- und Nachname",
+      "email": "E-Mail",
+      "emailPlaceholder": "name@firma.de",
+      "phone": "Telefon",
+      "phonePlaceholder": "+49 …",
+      "message": "Projektbeschreibung",
+      "messagePlaceholder": "Netzebene, Umfang, gewünschter Zeitrahmen …",
+      "upload": "Leistungsverzeichnis / Anhang hochladen (optional)",
+      "submit": "Anfrage senden",
+      "sent": "Anfrage gesendet"
+    },
+    "emergency": {
+      "title": "24/7 Notdienst & Entstörung",
+      "description": "Störfallmeldung für aktive Netzbetreiber-Verträge, rund um die Uhr erreichbar."
+    },
+    "mapPlaceholder": "Kartenausschnitt · Einsatzgebiet Essen & NRW"
+  },
+  "teamPage": {
+    "eyebrow": "Das Team",
+    "title": "Die Köpfe hinter jeder Spleißstelle.",
+    "subtitle": "Erfahrung aus Tiefbau, Spleißtechnik und Projektleitung — gebündelt in einem eingespielten Team.",
+    "groups": {
+      "leadership": "Geschäftsführung",
+      "technical": "Projektleitung & Technik",
+      "admin": "Verwaltung & Disposition"
+    },
+    "placeholderNote": "Platzhalter-Daten · Muster-Layout"
+  },
+  "leistungenPage": {
+    "eyebrow": "Leistungen",
+    "title": "Vier Leistungsbereiche, ein Montagepartner.",
+    "subtitle": "Von der ersten Trassenplanung bis zur OTDR-Abnahme — wir übernehmen die gesamte Ausbaustrecke oder einzelne Baulose."
+  },
+  "karrierePage": {
+    "eyebrow": "Karriere",
+    "title": "In drei Schritten zur Bewerbung.",
+    "subtitle": "Kein PDF-Upload, keine Wartezeit — optimiert für die Bewerbung direkt von der Baustelle.",
+    "steps": {
+      "1": { "title": "Wer Sie sind", "fields": ["Name", "Telefon", "Wohnort"] },
+      "2": { "title": "Ihre Position", "fields": ["Gewünschte Position", "Erfahrung"] },
+      "3": { "title": "Verfügbarkeit", "fields": ["Ab wann verfügbar?", "Führerschein vorhanden?"] }
+    },
+    "roles": ["Spleißtechniker:in", "Tiefbaufacharbeiter:in", "Bauleiter:in", "Sonstige Position"],
+    "submit": "Bewerbung absenden",
+    "next": "Weiter",
+    "back": "Zurück"
+  }
+}
