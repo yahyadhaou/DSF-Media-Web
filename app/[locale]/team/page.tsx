@@ -1,5 +1,9 @@
 import { getTranslations } from "next-intl/server";
+import { Phone, Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+
+const CENTRAL_PHONE = "+49 162 686 1853";
+const CENTRAL_EMAIL = "abdel@dsf-media.de";
 
 type Member = {
   initials: string;
@@ -7,6 +11,8 @@ type Member = {
   role: string;
   note: string;
   gradient: string;
+  phone?: string;
+  email?: string;
 };
 
 const leadership: Member[] = [
@@ -16,6 +22,8 @@ const leadership: Member[] = [
     role: "Geschäftsführer",
     note: "Verantwortlich für Partnerbeziehungen, Projektakquise und operative Steuerung.",
     gradient: "from-navy to-teal",
+    phone: CENTRAL_PHONE,
+    email: CENTRAL_EMAIL,
   },
 ];
 
@@ -46,15 +54,25 @@ export default async function TeamPage() {
       </Container>
 
       <Container className="mt-16 flex flex-col gap-14">
-        <Group label={t("groups.leadership")} members={leadership} />
-        {/* <Group label={t("groups.technical")} members={technical} /> */}
-        <Group label={t("groups.admin")} members={admin} />
+        <Group label={t("groups.leadership")} members={leadership} directLabel={t("directLine")} />
+        <Group label={t("groups.technical")} members={technical} centralLabel={t("viaCentral")} />
+        <Group label={t("groups.admin")} members={admin} centralLabel={t("viaCentral")} />
       </Container>
     </div>
   );
 }
 
-function Group({ label, members }: { label: string; members: Member[] }) {
+function Group({
+  label,
+  members,
+  directLabel,
+  centralLabel,
+}: {
+  label: string;
+  members: Member[];
+  directLabel?: string;
+  centralLabel?: string;
+}) {
   return (
     <div className="flex flex-col gap-6">
       <span className="border-b border-fg/8 pb-3 text-xs font-bold uppercase tracking-widest text-fg/40">
@@ -74,6 +92,20 @@ function Group({ label, members }: { label: string; members: Member[] }) {
             <span className="font-display text-base font-bold text-fg">{m.name}</span>
             <span className="text-xs font-semibold text-teal-light">{m.role}</span>
             <span className="text-xs text-fg/45">{m.note}</span>
+
+            <div className="mt-2 flex w-full flex-col items-center gap-1.5 border-t border-fg/8 pt-3">
+              <span className="flex items-center gap-1.5 text-[11px] text-fg/55">
+                <Phone size={11} className="shrink-0 text-teal" />
+                {m.phone ?? CENTRAL_PHONE}
+              </span>
+              <span className="flex items-center gap-1.5 text-[11px] text-fg/55">
+                <Mail size={11} className="shrink-0 text-teal" />
+                {m.email ?? CENTRAL_EMAIL}
+              </span>
+              <span className="text-[10px] uppercase tracking-wide text-fg/30">
+                {m.phone ? directLabel : centralLabel}
+              </span>
+            </div>
           </div>
         ))}
       </div>

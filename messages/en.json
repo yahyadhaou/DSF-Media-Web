@@ -180,7 +180,9 @@
       "technical": "Project management & technical",
       "admin": "Administration & dispatch"
     },
-    "placeholderNote": "Placeholder data · sample layout"
+    "placeholderNote": "Placeholder data · sample layout",
+    "directLine": "Direct line",
+    "viaCentral": "Reachable via the main office"
   },
   "leistungenPage": {
     "eyebrow": "Services",

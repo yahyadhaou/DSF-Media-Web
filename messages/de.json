@@ -180,7 +180,9 @@
       "technical": "Projektleitung & Technik",
       "admin": "Verwaltung & Disposition"
     },
-    "placeholderNote": "Platzhalter-Daten · Muster-Layout"
+    "placeholderNote": "Platzhalter-Daten · Muster-Layout",
+    "directLine": "Direkte Durchwahl",
+    "viaCentral": "Erreichbar über die Zentrale"
   },
   "leistungenPage": {
     "eyebrow": "Leistungen",
