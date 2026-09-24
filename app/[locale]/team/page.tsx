@@ -27,8 +27,8 @@ const technical: Member[] = [
 ];
 
 const admin: Member[] = [
-  { initials: "TN", name: "Tarek Nasser", role: "Disposition & 24/7-Einsatz", note: "Koordiniert Notdienst-Einsätze", gradient: "from-navy to-navy-2" },
-  { initials: "EF", name: "Elena Fischer", role: "Kaufmännische Leitung", note: "Abrechnung & Vertragswesen", gradient: "from-navy to-navy-2" },
+  { initials: "VD", name: "Verena Dhaou", role: "Disposition & 24/7-Einsatz", note: "Koordiniert Notdienst-Einsätze", gradient: "from-navy to-navy-2" },
+  { initials: "ED", name: "Elena Dhaou", role: "Kaufmännische Leitung", note: "Abrechnung & Vertragswesen", gradient: "from-navy to-navy-2" },
 ];
 
 export default async function TeamPage() {
@@ -47,7 +47,7 @@ export default async function TeamPage() {
 
       <Container className="mt-16 flex flex-col gap-14">
         <Group label={t("groups.leadership")} members={leadership} />
-        <Group label={t("groups.technical")} members={technical} />
+        {/* <Group label={t("groups.technical")} members={technical} /> */}
         <Group label={t("groups.admin")} members={admin} />
       </Container>
     </div>
