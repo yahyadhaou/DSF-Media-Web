@@ -18,11 +18,11 @@ export function SectionHeading({
       <span className="text-xs font-bold uppercase tracking-[0.2em] text-teal">
         {eyebrow}
       </span>
-      <h2 className="font-display max-w-2xl text-3xl font-bold text-white sm:text-4xl">
+      <h2 className="font-display max-w-2xl text-3xl font-bold text-fg sm:text-4xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="max-w-xl text-base leading-relaxed text-white/60">
+        <p className="max-w-xl text-base leading-relaxed text-fg/60">
           {subtitle}
         </p>
       )}

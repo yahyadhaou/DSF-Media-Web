@@ -37,12 +37,12 @@ export default async function TeamPage() {
   return (
     <div className="py-20 lg:py-28">
       <Container className="flex flex-col items-center gap-4 text-center">
-        <span className="rounded-full border border-dashed border-white/15 px-3 py-1 text-[11px] text-white/35">
+        <span className="rounded-full border border-dashed border-fg/15 px-3 py-1 text-[11px] text-fg/35">
           {t("placeholderNote")}
         </span>
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-teal">{t("eyebrow")}</span>
-        <h1 className="font-display max-w-2xl text-4xl font-bold text-white sm:text-5xl">{t("title")}</h1>
-        <p className="max-w-lg text-base leading-relaxed text-white/60">{t("subtitle")}</p>
+        <h1 className="font-display max-w-2xl text-4xl font-bold text-fg sm:text-5xl">{t("title")}</h1>
+        <p className="max-w-lg text-base leading-relaxed text-fg/60">{t("subtitle")}</p>
       </Container>
 
       <Container className="mt-16 flex flex-col gap-14">
@@ -57,23 +57,23 @@ export default async function TeamPage() {
 function Group({ label, members }: { label: string; members: Member[] }) {
   return (
     <div className="flex flex-col gap-6">
-      <span className="border-b border-white/8 pb-3 text-xs font-bold uppercase tracking-widest text-white/40">
+      <span className="border-b border-fg/8 pb-3 text-xs font-bold uppercase tracking-widest text-fg/40">
         {label}
       </span>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {members.map((m) => (
           <div
             key={m.name}
-            className="flex flex-col items-center gap-3 rounded-2xl border border-white/8 bg-ink-soft p-7 text-center"
+            className="flex flex-col items-center gap-3 rounded-2xl border border-fg/8 bg-ink-soft p-7 text-center"
           >
             <div
-              className={`flex h-[68px] w-[68px] items-center justify-center rounded-full bg-gradient-to-br ${m.gradient} font-display text-xl font-bold text-white`}
+              className={`flex h-[68px] w-[68px] items-center justify-center rounded-full bg-gradient-to-br ${m.gradient} font-display text-xl font-bold text-fg`}
             >
               {m.initials}
             </div>
-            <span className="font-display text-base font-bold text-white">{m.name}</span>
+            <span className="font-display text-base font-bold text-fg">{m.name}</span>
             <span className="text-xs font-semibold text-teal-light">{m.role}</span>
-            <span className="text-xs text-white/45">{m.note}</span>
+            <span className="text-xs text-fg/45">{m.note}</span>
           </div>
         ))}
       </div>

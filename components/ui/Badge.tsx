@@ -14,7 +14,7 @@ export function Badge({
     <span
       className={clsx(
         "inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-bold tracking-wide",
-        tone === "neutral" && "border-white/16 text-white/80",
+        tone === "neutral" && "border-fg/16 text-fg/80",
         tone === "telekom" &&
           "border-magenta/40 bg-magenta/10 text-[#FF6FB4]",
         className

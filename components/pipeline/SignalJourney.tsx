@@ -1,158 +1,135 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion } from "framer-motion";
-import { Zap, Settings2 } from "lucide-react";
+import { motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { SignalTunnel } from "@/components/pipeline/SignalTunnel";
+import { BlueprintRoute } from "@/components/pipeline/BlueprintRoute";
 
-type Step = {
-  title: string;
-  description: string;
-  specs: string[];
-};
+type Step = { title: string; description: string; specs: string[] };
+
+const STEP_VH = 68;
 
 export function SignalJourney() {
   const t = useTranslations("signalJourney");
   const steps = t.raw("steps") as Step[];
-  const [active, setActive] = useState(2);
-  const [mode, setMode] = useState<"storyline" | "protocol">("storyline");
+  const shortLabels = t.raw("shortLabels") as string[];
+  const count = steps.length;
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+  const progress = useSpring(scrollYProgress, { stiffness: 90, damping: 28, mass: 0.4 });
+
+  const stepIndexRaw = useTransform(progress, [0, 1], [0, count - 1]);
+  const stepLabel = useTransform(stepIndexRaw, (v) => `${Math.min(count, Math.round(v) + 1)} / ${count}`);
 
   return (
-    <section id="signalweg" className="scroll-mt-20 py-24 lg:py-32">
-      <Container className="flex flex-col gap-12">
-        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
+    <>
+      <div id="signalweg" ref={sectionRef} className="relative scroll-mt-20" style={{ height: `${count * STEP_VH}vh` }}>
+        <div className="sticky top-0 h-screen overflow-hidden bg-ink">
+          <div className="pointer-events-none absolute inset-0 opacity-70">
+            <div className="animate-drift-a absolute -left-1/4 top-0 h-full w-3/4 bg-gradient-to-br from-navy/40 via-teal/6 to-transparent blur-3xl" />
+          </div>
 
-          <div className="flex shrink-0 rounded-full border border-white/12 p-1">
-            <button
-              type="button"
-              onClick={() => setMode("storyline")}
-              className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-bold transition-colors ${
-                mode === "storyline" ? "bg-teal text-[#06302E]" : "text-white/50 hover:text-white/80"
-              }`}
-            >
-              <Zap size={14} /> {t("toggleStoryline")}
-            </button>
-            <button
-              type="button"
-              onClick={() => setMode("protocol")}
-              className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-bold transition-colors ${
-                mode === "protocol" ? "bg-teal text-[#06302E]" : "text-white/50 hover:text-white/80"
-              }`}
-            >
-              <Settings2 size={14} /> {t("toggleProtocol")}
-            </button>
+          <div className="relative z-10 mx-auto flex h-full w-full max-w-[1280px] flex-col px-6 py-12 sm:px-10 sm:py-14">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-teal">
+                {t("eyebrow")} · <span className="text-fg/35">{t("toggleStoryline")}</span>
+              </span>
+              <motion.span className="font-mono text-xs font-bold text-fg/40">{stepLabel}</motion.span>
+            </div>
+
+            <div className="flex flex-1 flex-col items-center gap-6 lg:flex-row lg:gap-4">
+              <div className="w-full max-w-[640px] lg:flex-[1.3]">
+                <BlueprintRoute progress={progress} labels={shortLabels} count={count} />
+              </div>
+
+              <div className="relative w-full lg:flex-1">
+                <div className="relative h-[200px] border-l-2 border-teal/50 pl-6 sm:h-[180px]">
+                  {steps.map((step, i) => (
+                    <StepCaption key={step.title} step={step} index={i} count={count} progress={progress} />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden justify-between font-mono text-[10px] tracking-wide text-fg/25 sm:flex">
+              <span>REV. {String(Math.min(count, 1)).padStart(2, "0")} · DSF-MEDIA-NE3-NE5</span>
+              <span>SCHEMA A</span>
+            </div>
           </div>
         </div>
+      </div>
 
-        <AnimatePresence mode="wait">
-          {mode === "storyline" ? (
-            <motion.div
-              key="storyline"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.35 }}
-              className="flex flex-col gap-10 lg:flex-row"
-            >
-              <div className="relative flex shrink-0 flex-col gap-8 lg:w-64">
-                <div className="absolute left-[9px] top-2 bottom-2 w-px bg-white/10" />
-                <motion.div
-                  className="absolute left-[9px] top-2 w-px bg-teal"
-                  animate={{ height: `${(active / (steps.length - 1)) * 100}%` }}
-                  transition={{ type: "spring", stiffness: 120, damping: 20 }}
-                  style={{ maxHeight: "calc(100% - 16px)" }}
-                />
+      <section className="py-24 lg:py-32">
+        <Container className="flex flex-col gap-10">
+          <SectionHeading eyebrow={t("toggleProtocol")} title={t("title")} subtitle={t("subtitle")} />
+          <div className="overflow-hidden rounded-2xl border border-fg/8">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-ink-soft text-left text-xs uppercase tracking-wider text-fg/40">
+                  <th className="px-6 py-4 font-bold">#</th>
+                  <th className="px-6 py-4 font-bold">Schritt</th>
+                  <th className="px-6 py-4 font-bold">Spezifikation 1</th>
+                  <th className="px-6 py-4 font-bold">Spezifikation 2</th>
+                </tr>
+              </thead>
+              <tbody>
                 {steps.map((step, i) => (
-                  <button
-                    key={step.title}
-                    type="button"
-                    onClick={() => setActive(i)}
-                    className="relative flex items-center gap-4 text-left"
-                  >
-                    <span
-                      className={`relative z-10 rounded-full transition-all ${
-                        i === active
-                          ? "h-5 w-5 bg-teal-bright shadow-[0_0_16px_4px_rgba(23,232,216,0.55)]"
-                          : "h-3.5 w-3.5 bg-white/20"
-                      }`}
-                    />
-                    <span
-                      className={`text-sm transition-colors ${
-                        i === active ? "font-bold text-white" : "text-white/45 hover:text-white/70"
-                      }`}
-                    >
-                      {step.title}
-                    </span>
-                  </button>
-                ))}
-              </div>
-
-              <div className="relative min-h-[420px] flex-1 overflow-hidden rounded-2xl border border-white/8 bg-ink-soft">
-                <SignalTunnel active={active} count={steps.length} />
-
-                <motion.div
-                  key={active}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col gap-4 bg-gradient-to-t from-ink-soft via-ink-soft/90 to-transparent p-8 pt-24 sm:p-10 sm:pt-28"
-                >
-                  <span className="font-display text-2xl font-bold text-white">
-                    {steps[active].title}
-                  </span>
-                  <p className="max-w-xl text-[15px] leading-relaxed text-white/60">
-                    {steps[active].description}
-                  </p>
-                  <div className="flex flex-wrap gap-2.5 pt-1">
-                    {steps[active].specs.map((spec) => (
-                      <span
-                        key={spec}
-                        className="pointer-events-auto rounded-full border border-teal/35 bg-teal/10 px-3.5 py-1.5 text-xs font-bold text-teal-light"
-                      >
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="protocol"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.35 }}
-              className="overflow-hidden rounded-2xl border border-white/8"
-            >
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr className="bg-ink-soft text-left text-xs uppercase tracking-wider text-white/40">
-                    <th className="px-6 py-4 font-bold">#</th>
-                    <th className="px-6 py-4 font-bold">Schritt</th>
-                    <th className="px-6 py-4 font-bold">Spezifikation 1</th>
-                    <th className="px-6 py-4 font-bold">Spezifikation 2</th>
+                  <tr key={step.title} className="border-t border-fg/8 bg-ink even:bg-ink-soft/40">
+                    <td className="px-6 py-4 font-mono text-fg/40">{String(i + 1).padStart(2, "0")}</td>
+                    <td className="px-6 py-4 font-semibold text-fg">{step.title}</td>
+                    <td className="px-6 py-4 text-teal-light">{step.specs[0]}</td>
+                    <td className="px-6 py-4 text-fg/55">{step.specs[1]}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {steps.map((step, i) => (
-                    <tr key={step.title} className="border-t border-white/8 bg-ink even:bg-ink-soft/40">
-                      <td className="px-6 py-4 font-mono text-white/40">{String(i + 1).padStart(2, "0")}</td>
-                      <td className="px-6 py-4 font-semibold text-white">{step.title}</td>
-                      <td className="px-6 py-4 text-teal-light">{step.specs[0]}</td>
-                      <td className="px-6 py-4 text-white/55">{step.specs[1]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </Container>
-    </section>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
+
+function StepCaption({
+  step,
+  index,
+  count,
+  progress,
+}: {
+  step: Step;
+  index: number;
+  count: number;
+  progress: MotionValue<number>;
+}) {
+  const center = index / (count - 1);
+  const halfWindow = 1 / (count - 1) / 2.1;
+  const opacity = useTransform(
+    progress,
+    [center - halfWindow * 2, center - halfWindow, center + halfWindow, center + halfWindow * 2],
+    [0, 1, 1, 0]
+  );
+  const y = useTransform(progress, [center - halfWindow * 2, center, center + halfWindow * 2], [16, 0, -16]);
+
+  return (
+    <motion.div style={{ opacity, y }} className="absolute inset-0 flex flex-col justify-center gap-3.5">
+      <span className="font-display text-2xl font-bold text-fg sm:text-3xl">{step.title}</span>
+      <p className="max-w-md text-sm leading-relaxed text-fg/60 sm:text-[15px]">{step.description}</p>
+      <div className="flex flex-wrap gap-2">
+        {step.specs.map((spec) => (
+          <span
+            key={spec}
+            className="rounded-full border border-teal/35 bg-teal/10 px-3 py-1.5 text-[11px] font-bold text-teal-light"
+          >
+            {spec}
+          </span>
+        ))}
+      </div>
+    </motion.div>
   );
 }

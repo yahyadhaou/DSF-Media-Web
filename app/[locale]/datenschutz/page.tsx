@@ -8,7 +8,7 @@ export default async function DatenschutzPage() {
   return (
     <div className="py-20 lg:py-28">
       <Container className="flex max-w-2xl flex-col gap-8">
-        <h1 className="font-display text-4xl font-bold text-white">
+        <h1 className="font-display text-4xl font-bold text-fg">
           {de ? "Datenschutzerklärung" : "Privacy Policy"}
         </h1>
 
@@ -61,7 +61,7 @@ export default async function DatenschutzPage() {
         </Section>
 
         <Section title={de ? "7. Hosting" : "7. Hosting"}>
-          <p className="text-white/40">
+          <p className="text-fg/40">
             {de
               ? "[Angaben zum Hosting-Anbieter / Auftragsverarbeiter werden vor Live-Schaltung ergänzt.]"
               : "[Details of the hosting provider / data processor will be added before go-live.]"}
@@ -74,9 +74,9 @@ export default async function DatenschutzPage() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-2 border-t border-white/8 pt-6">
+    <div className="flex flex-col gap-2 border-t border-fg/8 pt-6">
       <span className="text-xs font-bold uppercase tracking-widest text-teal">{title}</span>
-      <div className="flex flex-col gap-1 text-sm leading-relaxed text-white/65">{children}</div>
+      <div className="flex flex-col gap-1 text-sm leading-relaxed text-fg/65">{children}</div>
     </div>
   );
 }

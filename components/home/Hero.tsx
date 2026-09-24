@@ -68,7 +68,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="font-display max-w-3xl text-[2.6rem] font-bold leading-[1.08] text-white sm:text-6xl"
+            className="font-display max-w-3xl text-[2.6rem] font-bold leading-[1.08] text-fg sm:text-6xl"
           >
             {t("titleLine1")}
             <br />
@@ -77,7 +77,7 @@ export function Hero() {
             </span>
           </motion.h1>
 
-          <motion.p variants={item} className="max-w-xl text-lg leading-relaxed text-white/60">
+          <motion.p variants={item} className="max-w-xl text-lg leading-relaxed text-fg/60">
             {t("subtitle")}
           </motion.p>
 
@@ -93,7 +93,7 @@ export function Hero() {
           <motion.a
             href="#signalweg"
             variants={item}
-            className="mt-6 flex items-center gap-2 text-sm text-white/40 transition-colors hover:text-white/70"
+            className="mt-6 flex items-center gap-2 text-sm text-fg/40 transition-colors hover:text-fg/70"
           >
             {t("scrollHint")}
             <motion.span

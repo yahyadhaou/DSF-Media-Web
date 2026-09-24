@@ -80,16 +80,16 @@ export function OtdrSimulator() {
       <Container className="flex flex-col gap-10">
         <SectionHeading eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
 
-        <div className="rounded-2xl border border-white/8 bg-ink-soft p-6 sm:p-10">
+        <div className="rounded-2xl border border-fg/8 bg-ink-soft p-6 sm:p-10">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 mb-8">
             <div className="flex flex-col gap-1.5">
-              <span className="text-xs font-bold uppercase tracking-widest text-white/40">
+              <span className="text-xs font-bold uppercase tracking-widest text-fg/40">
                 {t("distanceLabel")}
               </span>
-              <span className="font-display text-2xl font-bold text-white">{km.toFixed(2)} km</span>
+              <span className="font-display text-2xl font-bold text-fg">{km.toFixed(2)} km</span>
             </div>
             <div className="flex flex-col gap-1.5">
-              <span className="text-xs font-bold uppercase tracking-widest text-white/40">
+              <span className="text-xs font-bold uppercase tracking-widest text-fg/40">
                 {t("eventLabel")}
               </span>
               <span className="font-display text-2xl font-bold text-teal-light">
@@ -97,10 +97,10 @@ export function OtdrSimulator() {
               </span>
             </div>
             <div className="flex flex-col gap-1.5">
-              <span className="text-xs font-bold uppercase tracking-widest text-white/40">
+              <span className="text-xs font-bold uppercase tracking-widest text-fg/40">
                 {t("lossLabel")}
               </span>
-              <span className="font-display text-2xl font-bold text-white">{loss.toFixed(3)} dB</span>
+              <span className="font-display text-2xl font-bold text-fg">{loss.toFixed(3)} dB</span>
             </div>
           </div>
 
@@ -160,7 +160,7 @@ export function OtdrSimulator() {
             aria-label={t("distanceLabel")}
           />
 
-          <div className="mt-3 flex justify-between text-xs text-white/35">
+          <div className="mt-3 flex justify-between text-xs text-fg/35">
             <span>0 km</span>
             <span>{ROUTE_KM} km</span>
           </div>

@@ -18,10 +18,10 @@ export default async function LeistungenPage() {
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-teal">
           {t("leistungenPage.eyebrow")}
         </span>
-        <h1 className="font-display max-w-2xl text-4xl font-bold text-white sm:text-5xl">
+        <h1 className="font-display max-w-2xl text-4xl font-bold text-fg sm:text-5xl">
           {t("leistungenPage.title")}
         </h1>
-        <p className="max-w-xl text-base leading-relaxed text-white/60">
+        <p className="max-w-xl text-base leading-relaxed text-fg/60">
           {t("leistungenPage.subtitle")}
         </p>
       </Container>
@@ -32,31 +32,31 @@ export default async function LeistungenPage() {
           return (
             <div
               key={item.title}
-              className="flex flex-col gap-4 rounded-2xl border border-white/8 bg-ink-soft p-8"
+              className="flex flex-col gap-4 rounded-2xl border border-fg/8 bg-ink-soft p-8"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal/12">
                 <Icon size={22} className="text-teal" />
               </div>
-              <span className="font-display text-xl font-bold text-white">{item.title}</span>
-              <p className="text-sm leading-relaxed text-white/60">{item.description}</p>
+              <span className="font-display text-xl font-bold text-fg">{item.title}</span>
+              <p className="text-sm leading-relaxed text-fg/60">{item.description}</p>
             </div>
           );
         })}
       </Container>
 
       <Container className="mt-24 flex flex-col gap-10">
-        <span className="border-b border-white/8 pb-3 text-xs font-bold uppercase tracking-widest text-white/40">
+        <span className="border-b border-fg/8 pb-3 text-xs font-bold uppercase tracking-widest text-fg/40">
           {t("signalJourney.title")}
         </span>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((s, i) => (
-            <div key={s.title} className="flex gap-4 rounded-xl border border-white/8 bg-ink-soft p-6">
+            <div key={s.title} className="flex gap-4 rounded-xl border border-fg/8 bg-ink-soft p-6">
               <span className="font-display shrink-0 text-lg font-bold text-teal">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="flex flex-col gap-1.5">
-                <span className="text-sm font-bold text-white">{s.title}</span>
-                <span className="text-xs leading-relaxed text-white/50">{s.description}</span>
+                <span className="text-sm font-bold text-fg">{s.title}</span>
+                <span className="text-xs leading-relaxed text-fg/50">{s.description}</span>
               </div>
             </div>
           ))}
@@ -64,7 +64,7 @@ export default async function LeistungenPage() {
       </Container>
 
       <Container className="mt-20 flex flex-col items-center gap-5 text-center">
-        <h2 className="font-display max-w-lg text-2xl font-bold text-white sm:text-3xl">
+        <h2 className="font-display max-w-lg text-2xl font-bold text-fg sm:text-3xl">
           {t("finalCta.title")}
         </h2>
         <Button href="/kontakt" variant="primary">

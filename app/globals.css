@@ -1,9 +1,11 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-:root {
+:root,
+:root[data-theme="dark"] {
   --color-ink: #0b0f17;
   --color-ink-soft: #101825;
-  --color-ink-line: rgba(255, 255, 255, 0.08);
+  --color-fg: #ffffff;
 
   --color-navy: #0b3d5c;
   --color-navy-2: #127c9e;
@@ -14,14 +16,38 @@
   --color-magenta: #e20074;
   --color-magenta-light: #ff9bc7;
 
-  --color-paper: #fafbfc;
-  --color-ivory: #f3f1ec;
+  --shadow-ambient: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+  --logo-bar-1: #eaf6f6;
+  --logo-bar-2: #bfe9e6;
+  --logo-bar-3: #17c9c4;
+}
+
+:root[data-theme="light"] {
+  --color-ink: #fafbfc;
+  --color-ink-soft: #f1f3f5;
+  --color-fg: #0b1420;
+
+  --color-navy: #0b3d5c;
+  --color-navy-2: #127c9e;
+  --color-teal: #0e9a94;
+  --color-teal-bright: #0bb3ab;
+  --color-teal-light: #128f89;
+
+  --color-magenta: #c8005f;
+  --color-magenta-light: #a3004d;
+
+  --shadow-ambient: 0 20px 50px rgba(11, 20, 32, 0.08);
+
+  --logo-bar-1: #0b3d5c;
+  --logo-bar-2: #127c9e;
+  --logo-bar-3: #0e9a94;
 }
 
 @theme inline {
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
-  --color-ink-line: var(--color-ink-line);
+  --color-fg: var(--color-fg);
 
   --color-navy: var(--color-navy);
   --color-navy-2: var(--color-navy-2);
@@ -32,18 +58,16 @@
   --color-magenta: var(--color-magenta);
   --color-magenta-light: var(--color-magenta-light);
 
-  --color-paper: var(--color-paper);
-  --color-ivory: var(--color-ivory);
-
   --font-display: var(--font-space-grotesk);
   --font-sans: var(--font-manrope);
 }
 
 body {
   background: var(--color-ink);
-  color: #ffffff;
+  color: var(--color-fg);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -60,6 +84,10 @@ body {
   opacity: 0.035;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+:root[data-theme="light"] .grain-overlay {
+  opacity: 0.02;
+  mix-blend-mode: multiply;
 }
 
 /* Scroll progress bar */

@@ -32,6 +32,7 @@
     "subtitle": "From the distribution point to the wall socket — every step planned, measured and documented.",
     "toggleStoryline": "Signal path",
     "toggleProtocol": "Technical protocol",
+    "shortLabels": ["POP", "ROUTE", "SPLICE", "APL", "NE4", "OTO"],
     "steps": [
       {
         "title": "Signal origin",
@@ -189,14 +190,23 @@
   "karrierePage": {
     "eyebrow": "Careers",
     "title": "Apply in three steps.",
-    "subtitle": "No PDF upload, no waiting — optimized for applying straight from the job site.",
+    "subtitle": "Upload a PDF résumé if you'd like — optimized for applying straight from the job site.",
     "steps": {
       "1": { "title": "Who you are", "fields": ["Name", "Phone", "Location"] },
       "2": { "title": "Your role", "fields": ["Desired position", "Experience"] },
       "3": { "title": "Availability", "fields": ["Available from", "Driving licence?"] }
     },
     "roles": ["Splicing technician", "Civil works specialist", "Site manager", "Other role"],
+    "upload": {
+      "label": "Résumé (PDF, optional)",
+      "placeholder": "Choose or drop a PDF",
+      "invalidType": "Please upload a PDF file only.",
+      "tooLarge": "File too large (max. {max} MB)."
+    },
     "submit": "Submit application",
+    "sending": "Sending …",
+    "success": "Thanks! Your application was received — we'll be in touch soon.",
+    "error": "Something went wrong. Please try again or email us directly at abdel@dsf-media.de.",
     "next": "Next",
     "back": "Back"
   }

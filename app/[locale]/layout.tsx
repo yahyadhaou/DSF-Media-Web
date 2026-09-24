@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import "../globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -60,20 +61,23 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${spaceGrotesk.variable} ${manrope.variable} bg-ink font-sans antialiased`}
+        suppressHydrationWarning
       >
-        <NextIntlClientProvider>
-          <SmoothScroll>
-            <ScrollProgress />
-            <div className="grain-overlay" />
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <CookieBanner />
-          </SmoothScroll>
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider>
+            <SmoothScroll>
+              <ScrollProgress />
+              <div className="grain-overlay" />
+              <Header />
+              <main>{children}</main>
+              <Footer />
+              <CookieBanner />
+            </SmoothScroll>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

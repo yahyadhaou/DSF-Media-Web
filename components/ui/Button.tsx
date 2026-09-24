@@ -8,8 +8,8 @@ const styles: Record<Variant, string> = {
   primary:
     "bg-teal text-[#06302E] hover:bg-teal-bright shadow-[0_0_0_1px_rgba(23,201,196,0.4)]",
   outline:
-    "border border-white/20 text-white hover:border-white/40 hover:bg-white/5",
-  ghost: "text-white/80 hover:text-white",
+    "border border-fg/20 text-fg hover:border-fg/40 hover:bg-fg/5",
+  ghost: "text-fg/80 hover:text-fg",
 };
 
 export function Button({
@@ -30,6 +30,7 @@ export function Button({
   const cls = clsx(
     "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold transition-colors",
     styles[variant],
+    Boolean(props.disabled) && "pointer-events-none opacity-50",
     className
   );
 

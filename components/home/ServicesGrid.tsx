@@ -29,13 +29,13 @@ export function ServicesGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex flex-col gap-4 rounded-2xl border border-white/8 bg-ink-soft p-7"
+                className="flex flex-col gap-4 rounded-2xl border border-fg/8 bg-ink-soft p-7"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal/12">
                   <Icon size={20} className="text-teal" />
                 </div>
-                <span className="font-display text-lg font-bold text-white">{item.title}</span>
-                <p className="text-sm leading-relaxed text-white/55">{item.description}</p>
+                <span className="font-display text-lg font-bold text-fg">{item.title}</span>
+                <p className="text-sm leading-relaxed text-fg/55">{item.description}</p>
               </motion.div>
             );
           })}

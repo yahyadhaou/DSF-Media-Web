@@ -34,7 +34,7 @@ export function ContactForm({ labels }: { labels: Labels }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-6 rounded-2xl border border-white/8 bg-ink-soft p-8 sm:p-10"
+      className="flex flex-col gap-6 rounded-2xl border border-fg/8 bg-ink-soft p-8 sm:p-10"
     >
       <div className="flex flex-wrap gap-2.5">
         {labels.requestTypes.map((type, i) => (
@@ -48,7 +48,7 @@ export function ContactForm({ labels }: { labels: Labels }) {
                 ? i === 2
                   ? "border border-magenta/50 bg-magenta/18 text-[#FF9BC7]"
                   : "border border-teal/45 bg-teal/16 text-teal-light"
-                : "border border-white/16 text-white/60 hover:border-white/30 hover:text-white/85"
+                : "border border-fg/16 text-fg/60 hover:border-fg/30 hover:text-fg/85"
             }`}
           >
             {type}
@@ -64,14 +64,14 @@ export function ContactForm({ labels }: { labels: Labels }) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="text-xs font-semibold text-white/60">{labels.message}</label>
+        <label className="text-xs font-semibold text-fg/60">{labels.message}</label>
         <textarea
           placeholder={labels.messagePlaceholder}
-          className="h-28 resize-none rounded-lg border border-white/14 bg-ink px-3.5 py-3 text-sm text-white placeholder:text-white/30 focus:border-teal focus:outline-none"
+          className="h-28 resize-none rounded-lg border border-fg/14 bg-ink px-3.5 py-3 text-sm text-fg placeholder:text-fg/30 focus:border-teal focus:outline-none"
         />
       </div>
 
-      <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-dashed border-white/20 px-4 py-4 text-sm text-white/45 hover:border-white/35">
+      <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-dashed border-fg/20 px-4 py-4 text-sm text-fg/45 hover:border-fg/35">
         <Upload size={18} />
         {labels.upload}
         <input type="file" className="hidden" />
@@ -105,11 +105,11 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-xs font-semibold text-white/60">{label}</label>
+      <label className="text-xs font-semibold text-fg/60">{label}</label>
       <input
         type={type}
         placeholder={placeholder}
-        className="rounded-lg border border-white/14 bg-ink px-3.5 py-3 text-sm text-white placeholder:text-white/30 focus:border-teal focus:outline-none"
+        className="rounded-lg border border-fg/14 bg-ink px-3.5 py-3 text-sm text-fg placeholder:text-fg/30 focus:border-teal focus:outline-none"
       />
     </div>
   );

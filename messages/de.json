@@ -32,6 +32,7 @@
     "subtitle": "Vom Verteilerpunkt bis zur Dose — jeder Schritt geplant, gemessen und dokumentiert.",
     "toggleStoryline": "Signalweg",
     "toggleProtocol": "Technisches Protokoll",
+    "shortLabels": ["POP", "TRASSE", "FUSION", "APL", "NE4", "OTO"],
     "steps": [
       {
         "title": "Signal-Ursprung",
@@ -189,14 +190,23 @@
   "karrierePage": {
     "eyebrow": "Karriere",
     "title": "In drei Schritten zur Bewerbung.",
-    "subtitle": "Kein PDF-Upload, keine Wartezeit — optimiert für die Bewerbung direkt von der Baustelle.",
+    "subtitle": "PDF-Lebenslauf optional hochladen — optimiert für die Bewerbung direkt von der Baustelle.",
     "steps": {
       "1": { "title": "Wer Sie sind", "fields": ["Name", "Telefon", "Wohnort"] },
       "2": { "title": "Ihre Position", "fields": ["Gewünschte Position", "Erfahrung"] },
       "3": { "title": "Verfügbarkeit", "fields": ["Ab wann verfügbar?", "Führerschein vorhanden?"] }
     },
     "roles": ["Spleißtechniker:in", "Tiefbaufacharbeiter:in", "Bauleiter:in", "Sonstige Position"],
+    "upload": {
+      "label": "Lebenslauf (PDF, optional)",
+      "placeholder": "PDF auswählen oder hierher ziehen",
+      "invalidType": "Bitte nur PDF-Dateien hochladen.",
+      "tooLarge": "Datei zu groß (max. {max} MB)."
+    },
     "submit": "Bewerbung absenden",
+    "sending": "Wird gesendet …",
+    "success": "Danke! Ihre Bewerbung ist eingegangen — wir melden uns zeitnah.",
+    "error": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an abdel@dsf-media.de.",
     "next": "Weiter",
     "back": "Zurück"
   }

@@ -18,20 +18,20 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-white/8 bg-ink-soft">
+    <footer className="border-t border-fg/8 bg-ink-soft">
       <Container className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
-          <Logo variant="light" />
-          <p className="max-w-[240px] text-sm leading-relaxed text-white/55">{t("tagline")}</p>
+          <Logo />
+          <p className="max-w-[240px] text-sm leading-relaxed text-fg/55">{t("tagline")}</p>
         </div>
 
         <div className="flex flex-col gap-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-white/40">
+          <span className="text-xs font-bold uppercase tracking-widest text-fg/40">
             {t("columns.company.title")}
           </span>
-          <nav className="flex flex-col gap-3 text-sm text-white/70">
+          <nav className="flex flex-col gap-3 text-sm text-fg/70">
             {companyLinks.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-white transition-colors">
+              <Link key={l.href} href={l.href} className="hover:text-fg transition-colors">
                 {l.label}
               </Link>
             ))}
@@ -39,12 +39,12 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-white/40">
+          <span className="text-xs font-bold uppercase tracking-widest text-fg/40">
             {t("columns.legal.title")}
           </span>
-          <nav className="flex flex-col gap-3 text-sm text-white/70">
+          <nav className="flex flex-col gap-3 text-sm text-fg/70">
             {legalLinks.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-white transition-colors">
+              <Link key={l.href} href={l.href} className="hover:text-fg transition-colors">
                 {l.label}
               </Link>
             ))}
@@ -52,10 +52,10 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-white/40">
+          <span className="text-xs font-bold uppercase tracking-widest text-fg/40">
             {t("columns.contact.title")}
           </span>
-          <div className="flex flex-col gap-3 text-sm text-white/70">
+          <div className="flex flex-col gap-3 text-sm text-fg/70">
             <span className="flex items-center gap-2.5">
               <MapPin size={15} className="text-teal shrink-0" /> {t("address")}
             </span>
@@ -69,8 +69,8 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="border-t border-white/8 py-6">
-        <Container className="flex flex-col items-center justify-between gap-3 text-xs text-white/40 sm:flex-row">
+      <div className="border-t border-fg/8 py-6">
+        <Container className="flex flex-col items-center justify-between gap-3 text-xs text-fg/40 sm:flex-row">
           <span>© {new Date().getFullYear()} {t("copyright")}</span>
         </Container>
       </div>

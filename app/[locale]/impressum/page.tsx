@@ -8,7 +8,7 @@ export default async function ImpressumPage() {
   return (
     <div className="py-20 lg:py-28">
       <Container className="flex max-w-2xl flex-col gap-8">
-        <h1 className="font-display text-4xl font-bold text-white">
+        <h1 className="font-display text-4xl font-bold text-fg">
           {de ? "Impressum" : "Legal Notice"}
         </h1>
 
@@ -29,7 +29,7 @@ export default async function ImpressumPage() {
         </Section>
 
         <Section title={de ? "Registereintrag" : "Commercial Register"}>
-          <p className="text-white/40">
+          <p className="text-fg/40">
             {de
               ? "[Registergericht] · [Handelsregisternummer] — wird nach Eintragung ergänzt."
               : "[Register Court] · [Commercial Register Number] — to be added after registration."}
@@ -37,7 +37,7 @@ export default async function ImpressumPage() {
         </Section>
 
         <Section title={de ? "Umsatzsteuer-ID" : "VAT ID"}>
-          <p className="text-white/40">
+          <p className="text-fg/40">
             {de
               ? "[USt-IdNr. gemäß § 27a UStG] — wird ergänzt."
               : "[VAT ID pursuant to Sec. 27a of the German VAT Act] — to be added."}
@@ -49,7 +49,7 @@ export default async function ImpressumPage() {
         </Section>
 
         <Section title={de ? "EU-Streitschlichtung" : "EU Dispute Resolution"}>
-          <p className="text-white/50 leading-relaxed">
+          <p className="text-fg/50 leading-relaxed">
             {de
               ? "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
               : "The European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr/. We are not obliged or willing to participate in dispute resolution proceedings before a consumer arbitration board."}
@@ -62,9 +62,9 @@ export default async function ImpressumPage() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-2 border-t border-white/8 pt-6">
+    <div className="flex flex-col gap-2 border-t border-fg/8 pt-6">
       <span className="text-xs font-bold uppercase tracking-widest text-teal">{title}</span>
-      <div className="flex flex-col gap-1 text-sm leading-relaxed text-white/65">{children}</div>
+      <div className="flex flex-col gap-1 text-sm leading-relaxed text-fg/65">{children}</div>
     </div>
   );
 }
