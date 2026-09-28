@@ -161,9 +161,16 @@
       "phonePlaceholder": "+49 …",
       "message": "Project description",
       "messagePlaceholder": "Network level, scope, desired timeline …",
-      "upload": "Upload bill of quantities / attachment (optional)",
+      "upload": {
+        "label": "Attach a bill of quantities, plan, or photo (optional)",
+        "placeholder": "Choose or drop a PDF or image",
+        "invalidType": "Please upload a PDF or image file only (JPG, PNG, WEBP).",
+        "tooLarge": "File too large (max. {max} MB)."
+      },
       "submit": "Send request",
-      "sent": "Request sent"
+      "sending": "Sending …",
+      "sent": "Request sent",
+      "error": "Something went wrong. Please try again or email us directly at abdel@dsf-media.de."
     },
     "emergency": {
       "title": "24/7 emergency dispatch",
@@ -194,7 +201,7 @@
     "title": "Apply in three steps.",
     "subtitle": "Upload a PDF résumé if you'd like — optimized for applying straight from the job site.",
     "steps": {
-      "1": { "title": "Who you are", "fields": ["Name", "Phone", "Location"] },
+      "1": { "title": "Who you are", "fields": ["Name", "Phone", "Email", "Location"] },
       "2": { "title": "Your role", "fields": ["Desired position", "Experience"] },
       "3": { "title": "Availability", "fields": ["Available from", "Driving licence?"] }
     },

@@ -161,9 +161,16 @@
       "phonePlaceholder": "+49 …",
       "message": "Projektbeschreibung",
       "messagePlaceholder": "Netzebene, Umfang, gewünschter Zeitrahmen …",
-      "upload": "Leistungsverzeichnis / Anhang hochladen (optional)",
+      "upload": {
+        "label": "Leistungsverzeichnis, Plan oder Foto anhängen (optional)",
+        "placeholder": "PDF oder Bild auswählen oder hierher ziehen",
+        "invalidType": "Bitte nur PDF- oder Bilddateien (JPG, PNG, WEBP) hochladen.",
+        "tooLarge": "Datei zu groß (max. {max} MB)."
+      },
       "submit": "Anfrage senden",
-      "sent": "Anfrage gesendet"
+      "sending": "Wird gesendet …",
+      "sent": "Anfrage gesendet",
+      "error": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an abdel@dsf-media.de."
     },
     "emergency": {
       "title": "24/7 Notdienst & Entstörung",
@@ -194,7 +201,7 @@
     "title": "In drei Schritten zur Bewerbung.",
     "subtitle": "PDF-Lebenslauf optional hochladen — optimiert für die Bewerbung direkt von der Baustelle.",
     "steps": {
-      "1": { "title": "Wer Sie sind", "fields": ["Name", "Telefon", "Wohnort"] },
+      "1": { "title": "Wer Sie sind", "fields": ["Name", "Telefon", "E-Mail", "Wohnort"] },
       "2": { "title": "Ihre Position", "fields": ["Gewünschte Position", "Erfahrung"] },
       "3": { "title": "Verfügbarkeit", "fields": ["Ab wann verfügbar?", "Führerschein vorhanden?"] }
     },

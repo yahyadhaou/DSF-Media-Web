@@ -18,9 +18,14 @@ export default async function KontaktPage() {
     phonePlaceholder: t("form.phonePlaceholder"),
     message: t("form.message"),
     messagePlaceholder: t("form.messagePlaceholder"),
-    upload: t("form.upload"),
+    uploadLabel: t("form.upload.label"),
+    uploadPlaceholder: t("form.upload.placeholder"),
+    uploadInvalidType: t("form.upload.invalidType"),
+    uploadTooLarge: t("form.upload.tooLarge", { max: 4 }),
     submit: t("form.submit"),
     sent: t("form.sent"),
+    sending: t("form.sending"),
+    error: t("form.error"),
   };
 
   return (

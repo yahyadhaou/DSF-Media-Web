@@ -1,9 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { Check, FileText, X, AlertCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -11,14 +10,11 @@ import { Button } from "@/components/ui/Button";
 const TOTAL_STEPS = 3;
 const MAX_FILE_MB = 4;
 
-const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
 type Status = "idle" | "sending" | "sent" | "error";
 
 export default function KarrierePage() {
   const t = useTranslations("karrierePage");
+  const locale = useLocale();
   const roles = t.raw("roles") as string[];
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -53,17 +49,11 @@ export default function KarrierePage() {
     e.preventDefault();
     if (!formRef.current) return;
 
-    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      console.error(
-        "EmailJS is not configured. Set NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY in .env.local."
-      );
-      setStatus("error");
-      return;
-    }
-
     setStatus("sending");
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, { publicKey: PUBLIC_KEY });
+      const data = new FormData(formRef.current);
+      const res = await fetch("/api/karriere", { method: "POST", body: data });
+      if (!res.ok) throw new Error("request_failed");
       setStatus("sent");
     } catch (err) {
       console.error(err);
@@ -71,7 +61,7 @@ export default function KarrierePage() {
     }
   }
 
-  const stepValid = true; // fields are optional at the UI layer; EmailJS/template enforces required server-side if needed
+  const stepValid = true;
 
   return (
     <div className="py-20 lg:py-28">
@@ -118,12 +108,16 @@ export default function KarrierePage() {
           </motion.div>
         ) : (
           <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
-            {/* All three steps stay mounted so EmailJS can read every field regardless of which step is visible */}
+            <input type="hidden" name="locale" value={locale} />
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+
+            {/* All three steps stay mounted so every field is included in FormData regardless of which step is visible */}
             <div className={step === 1 ? "flex flex-col gap-5 rounded-2xl border border-fg/8 bg-ink-soft p-8" : "hidden"}>
               <span className="font-display text-lg font-bold text-fg">{t("steps.1.title")}</span>
               <TextField name="from_name" label={t("steps.1.fields.0")} />
               <TextField name="from_phone" label={t("steps.1.fields.1")} type="tel" />
-              <TextField name="from_location" label={t("steps.1.fields.2")} />
+              <TextField name="from_email" label={t("steps.1.fields.2")} type="email" />
+              <TextField name="from_location" label={t("steps.1.fields.3")} />
 
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-semibold text-fg/60">{t("upload.label")}</label>
