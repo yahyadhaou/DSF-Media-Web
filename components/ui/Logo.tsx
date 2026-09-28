@@ -9,7 +9,7 @@ export function Logo({ className = "" }: { className?: string }) {
         <rect x="68" y="18" width="14" height="64" rx="6" fill="var(--logo-bar-3)" />
       </svg>
       <span className="font-display text-lg font-bold text-fg">
-        DSF <span className="font-sans font-semibold text-teal-light">Media</span>
+        DSF <span className="font-body font-semibold text-teal-light">Media</span>
       </span>
     </Link>
   );

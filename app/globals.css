@@ -58,14 +58,25 @@
   --color-magenta: var(--color-magenta);
   --color-magenta-light: var(--color-magenta-light);
 
-  --font-display: var(--font-space-grotesk);
-  --font-sans: var(--font-manrope);
+}
+
+/* Written as plain classes, not via @theme's font-* -> utility auto-generation:
+   that mechanism turned out to be unreliable here (a --font-sans clash with
+   Tailwind's own preset silently lost, and a custom --font-body token never
+   produced a .font-body utility at all — both quietly fell back to system
+   fonts). Referencing next/font's own emitted variables directly is guaranteed
+   to work regardless of Tailwind's theme-token quirks. */
+.font-display {
+  font-family: var(--font-space-grotesk), Georgia, serif;
+}
+.font-body {
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   background: var(--color-ink);
   color: var(--color-fg);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
