@@ -63,6 +63,22 @@ export default function KarrierePage() {
 
   const stepValid = true;
 
+  // Steps 1 and 2 stay mounted (just CSS-hidden) so every field reaches FormData
+  // at submit time, which means step 3's type="submit" button is always
+  // technically present in the form — so pressing Enter in any earlier step's
+  // input was implicitly submitting the whole form right then, skipping
+  // whatever step hadn't been shown yet (empty available_from/license). Enter
+  // now advances to the next step instead, and only actually submits on step 3.
+  function handleFormKeyDown(e: React.KeyboardEvent<HTMLFormElement>) {
+    if (e.key !== "Enter") return;
+    const target = e.target as HTMLElement;
+    if (target.tagName === "TEXTAREA") return;
+    if (step < TOTAL_STEPS) {
+      e.preventDefault();
+      setStep((s) => s + 1);
+    }
+  }
+
   return (
     <div className="py-20 lg:py-28">
       <Container className="flex flex-col items-center gap-4 text-center">
@@ -107,7 +123,7 @@ export default function KarrierePage() {
             <span className="font-display text-xl font-bold text-fg">{t("success")}</span>
           </motion.div>
         ) : (
-          <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
+          <form ref={formRef} onSubmit={handleSubmit} onKeyDown={handleFormKeyDown} className="flex flex-col gap-5">
             <input type="hidden" name="locale" value={locale} />
             <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
