@@ -22,6 +22,7 @@ export default function KarrierePage() {
   const [status, setStatus] = useState<Status>("idle");
   const [fileName, setFileName] = useState<string | null>(null);
   const [fileError, setFileError] = useState<string | null>(null);
+  const [errorDetail, setErrorDetail] = useState<string | null>(null);
 
   function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -50,13 +51,18 @@ export default function KarrierePage() {
     if (!formRef.current) return;
 
     setStatus("sending");
+    setErrorDetail(null);
     try {
       const data = new FormData(formRef.current);
       const res = await fetch("/api/karriere", { method: "POST", body: data });
-      if (!res.ok) throw new Error("request_failed");
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.detail || body?.error || `HTTP ${res.status}`);
+      }
       setStatus("sent");
     } catch (err) {
       console.error(err);
+      setErrorDetail(err instanceof Error ? err.message : String(err));
       setStatus("error");
     }
   }
@@ -187,9 +193,14 @@ export default function KarrierePage() {
             </div>
 
             {status === "error" && (
-              <div className="flex items-center gap-2 rounded-lg border border-magenta/35 bg-magenta/10 px-4 py-3 text-sm text-magenta-light">
-                <AlertCircle size={16} className="shrink-0" />
-                {t("error")}
+              <div className="flex flex-col gap-1.5 rounded-lg border border-magenta/35 bg-magenta/10 px-4 py-3 text-sm text-magenta-light">
+                <span className="flex items-center gap-2">
+                  <AlertCircle size={16} className="shrink-0" />
+                  {t("error")}
+                </span>
+                {errorDetail && (
+                  <span className="pl-6 font-mono text-xs text-magenta-light/70 select-all">{errorDetail}</span>
+                )}
               </div>
             )}
 

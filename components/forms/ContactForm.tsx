@@ -43,6 +43,7 @@ export function ContactForm({ labels }: { labels: Labels }) {
   const [website, setWebsite] = useState(""); // honeypot
   const [file, setFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState<string | null>(null);
+  const [errorDetail, setErrorDetail] = useState<string | null>(null);
 
   function update<K extends keyof typeof initialForm>(key: K, value: string) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -73,6 +74,7 @@ export function ContactForm({ labels }: { labels: Labels }) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
+    setErrorDetail(null);
     try {
       const data = new FormData();
       data.append("company", form.company);
@@ -86,12 +88,16 @@ export function ContactForm({ labels }: { labels: Labels }) {
       if (file) data.append("attachment", file);
 
       const res = await fetch("/api/kontakt", { method: "POST", body: data });
-      if (!res.ok) throw new Error("request_failed");
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.detail || body?.error || `HTTP ${res.status}`);
+      }
       setStatus("sent");
       setForm(initialForm);
       setFile(null);
     } catch (err) {
       console.error(err);
+      setErrorDetail(err instanceof Error ? err.message : String(err));
       setStatus("error");
     }
   }
@@ -186,9 +192,14 @@ export function ContactForm({ labels }: { labels: Labels }) {
       </div>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 rounded-lg border border-magenta/35 bg-magenta/10 px-4 py-3 text-sm text-magenta-light">
-          <AlertCircle size={16} className="shrink-0" />
-          {labels.error}
+        <div className="flex flex-col gap-1.5 rounded-lg border border-magenta/35 bg-magenta/10 px-4 py-3 text-sm text-magenta-light">
+          <span className="flex items-center gap-2">
+            <AlertCircle size={16} className="shrink-0" />
+            {labels.error}
+          </span>
+          {errorDetail && (
+            <span className="pl-6 font-mono text-xs text-magenta-light/70 select-all">{errorDetail}</span>
+          )}
         </div>
       )}
 

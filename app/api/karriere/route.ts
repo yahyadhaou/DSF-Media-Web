@@ -29,7 +29,10 @@ export async function POST(req: Request) {
 
     if (!isMailerConfigured()) {
       console.error("GMAIL_APP_PASSWORD is not set — see .env.local.example");
-      return NextResponse.json({ ok: false, error: "not_configured" }, { status: 500 });
+      return NextResponse.json(
+        { ok: false, error: "not_configured", detail: "GMAIL_APP_PASSWORD is not set on the server." },
+        { status: 500 }
+      );
     }
 
     const attachments: { filename: string; content: Buffer }[] = [];
@@ -82,6 +85,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ ok: false, error: "send_failed" }, { status: 500 });
+    const code = err && typeof err === "object" && "code" in err ? String(err.code) : undefined;
+    const message = err instanceof Error ? err.message : String(err);
+    return NextResponse.json(
+      { ok: false, error: "send_failed", detail: [code, message].filter(Boolean).join(": ") },
+      { status: 500 }
+    );
   }
 }
