@@ -2,5 +2,10 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  # Pin to the Node version this project was built and tested against, so the
+  # deployed Functions runtime matches local behavior (nodemailer/TLS included).
+  NODE_VERSION = "20"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
