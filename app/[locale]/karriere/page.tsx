@@ -213,11 +213,11 @@ export default function KarrierePage() {
                 <span />
               )}
               {step < TOTAL_STEPS ? (
-                <Button type="button" variant="primary" onClick={() => stepValid && setStep((s) => s + 1)}>
+                <Button key="next" type="button" variant="primary" onClick={() => stepValid && setStep((s) => s + 1)}>
                   {t("next")}
                 </Button>
               ) : (
-                <Button type="submit" variant="primary" disabled={status === "sending"}>
+                <Button key="submit" type="submit" variant="primary" disabled={status === "sending"}>
                   {status === "sending" ? t("sending") : t("submit")}
                 </Button>
               )}

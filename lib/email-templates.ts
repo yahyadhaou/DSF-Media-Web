@@ -30,6 +30,12 @@ function row(label: string, value: string) {
   return `<tr><td style="padding:6px 12px 6px 0;color:rgba(255,255,255,0.45);white-space:nowrap;vertical-align:top;">${escapeHtml(label)}</td><td style="padding:6px 0;color:#FFFFFF;">${escapeHtml(value)}</td></tr>`;
 }
 
+// Same as row(), but always renders — used for fields the admin always wants
+// to see a line for, even when the applicant left them blank.
+function rowAlways(label: string, value: string) {
+  return `<tr><td style="padding:6px 12px 6px 0;color:rgba(255,255,255,0.45);white-space:nowrap;vertical-align:top;">${escapeHtml(label)}</td><td style="padding:6px 0;color:#FFFFFF;">${value ? escapeHtml(value) : '<span style="color:rgba(255,255,255,0.35);">Nicht angegeben</span>'}</td></tr>`;
+}
+
 // --- Kontakt (business inquiry) ---
 
 export function adminContactEmail(data: {
@@ -98,8 +104,8 @@ export function adminApplicationEmail(data: {
       ${row("Wohnort", data.location)}
       ${row("Position", data.position)}
       ${row("Erfahrung", data.experience)}
-      ${row("Verfügbar ab", data.availableFrom)}
-      ${row("Führerschein", data.license)}
+      ${rowAlways("Verfügbar ab", data.availableFrom)}
+      ${rowAlways("Führerschein", data.license)}
       ${row("Lebenslauf", data.hasResume ? "Im Anhang" : "Nicht hochgeladen")}
     </table>
   `;
