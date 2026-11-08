@@ -28,15 +28,15 @@ const leadership: Member[] = [
 ];
 
 const technical: Member[] = [
-  { initials: "LH", name: "Lisa Hoffmann", role: "Projektleiterin NE3", note: "12 Jahre Tiefbau & Trassenplanung", gradient: "from-navy-2 to-teal" },
-  { initials: "MB", name: "Marco Berger", role: "Spleißtechniker", note: "Zertifiziert · Fusion & OTDR-Messung", gradient: "from-navy-2 to-teal" },
-  { initials: "JK", name: "Jonas Krüger", role: "Bauleiter", note: "Koordination Tiefbau & HDD-Einsätze", gradient: "from-navy-2 to-teal" },
-  { initials: "SW", name: "Sabine Weiß", role: "Inhouse-Installation", note: "MDU-Verkabelung & Wohnungswirtschaft", gradient: "from-navy-2 to-teal" },
+  // { initials: "LH", name: "Lisa Hoffmann", role: "Projektleiterin NE3", note: "12 Jahre Tiefbau & Trassenplanung", gradient: "from-navy-2 to-teal" },
+  { initials: "MB", name: "Marco Bergers", role: "Spleißtechniker", note: "Zertifiziert · Fusion & OTDR-Messung", gradient: "from-navy-2 to-teal" },
+  { initials: "YD", name: "Dhaou Yahya", role: "IT techniker und Inhouse-Installation", note: "Koordination mit IT & MDU-Verkabelung & Wohnungswirtschaft ", gradient: "from-navy-2 to-teal" },
+  // { initials: "SW", name: "Sabine Weiß", role: "Inhouse-Installation", note: "MDU-Verkabelung & Wohnungswirtschaft", gradient: "from-navy-2 to-teal" },
 ];
 
 const admin: Member[] = [
   { initials: "VD", name: "Verena Dhaou", role: "Disposition & 24/7-Einsatz", note: "Koordiniert Notdienst-Einsätze", gradient: "from-navy to-navy-2" },
-  { initials: "ED", name: "Elena Dhaou", role: "Kaufmännische Leitung", note: "Abrechnung & Vertragswesen", gradient: "from-navy to-navy-2" },
+  // { initials: "ED", name: "Elena Dhaou", role: "Kaufmännische Leitung", note: "Abrechnung & Vertragswesen", gradient: "from-navy to-navy-2" },
 ];
 
 export default async function TeamPage() {

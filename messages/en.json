@@ -68,13 +68,10 @@
   },
   "services": {
     "eyebrow": "Services",
-    "title": "Network levels 3 to 5 — from a single source.",
+    "title": "Network levels 4 to 5 — from a single source.",
     "subtitle": "Four core services, one point of contact for the entire build-out.",
     "items": [
-      {
-        "title": "Civil works & route construction",
-        "description": "Horizontal directional drilling (HDD) and micro-trenching for network level 3 — from route planning to cable placement."
-      },
+     
       {
         "title": "Splicing & measurement",
         "description": "Precision fusion splicing and OTDR protocol creation to DIN/ISO — every route measured and signed off."
