@@ -61,9 +61,9 @@ export function Hero() {
           className="flex flex-col items-start gap-8"
         >
           <motion.div variants={item} className="flex flex-wrap gap-2.5">
-            <Badge>{t("badgeIso")}</Badge>
-            <Badge>{t("badgeDvgw")}</Badge>
-            <Badge tone="telekom">{t("badgeTelekom")}</Badge>
+            {/* <Badge>{t("badgeIso")}</Badge>
+            <Badge>{t("badgeDvgw")}</Badge> */}
+            {/* <Badge tone="telekom">{t("badgeTelekom")}</Badge> */}
           </motion.div>
 
           <motion.h1
