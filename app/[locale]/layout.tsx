@@ -34,15 +34,15 @@ const manrope = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://dsf-media.de"),
   title: {
-    default: "DSF Media GmbH — Glasfaserausbau & Montagepartner",
+    default: "DSF Media GmbH — Glasfaser-Spezialist für Netzebene 4 & 5",
     template: "%s — DSF Media GmbH",
   },
   description:
-    "DSF Media GmbH ist zertifizierter Montagepartner für Netzebene 3–5: Tiefbau, Spleißtechnik, Inhouse-Installation und 24/7-Entstörung.",
+    "DSF Media GmbH ist Montagepartner für Netzebene 4 & 5: Inhouse-Verkabelung, Wohnungsanschluss bis zur Glasfaserdose, Spleiß- und Messtechnik sowie 24/7-Entstörung.",
   openGraph: {
-    title: "DSF Media GmbH — Glasfaserausbau & Montagepartner",
+    title: "DSF Media GmbH — Glasfaser-Spezialist für Netzebene 4 & 5",
     description:
-      "Präzision im Glasfaserausbau – vom Lichtimpuls bis zur Aktivierung.",
+      "Glasfaser im Gebäude – vom Hausübergabepunkt bis zur Glasfaserdose in jeder Wohnung.",
     siteName: "DSF Media GmbH",
     locale: "de_DE",
     type: "website",

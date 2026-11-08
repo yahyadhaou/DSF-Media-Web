@@ -1,11 +1,12 @@
 import { getTranslations } from "next-intl/server";
-import { Shovel, GitMerge, Building2, LifeBuoy } from "lucide-react";
+import { Building2, House, GitMerge, LifeBuoy } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
 type ServiceItem = { title: string; description: string };
 type Step = { title: string; description: string };
-const icons = [Shovel, GitMerge, Building2, LifeBuoy];
+// Order must match services.items: NE4, NE5, splicing, 24/7 service
+const icons = [Building2, House, GitMerge, LifeBuoy];
 
 export default async function LeistungenPage() {
   const t = await getTranslations();

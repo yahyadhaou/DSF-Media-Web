@@ -58,7 +58,7 @@ export function SignalJourney() {
             </div>
 
             <div className="hidden justify-between font-mono text-[10px] tracking-wide text-fg/25 sm:flex">
-              <span>REV. {String(Math.min(count, 1)).padStart(2, "0")} · DSF-MEDIA-NE3-NE5</span>
+              <span>REV. {String(Math.min(count, 1)).padStart(2, "0")} · DSF-MEDIA-NE4-NE5</span>
               <span>SCHEMA A</span>
             </div>
           </div>
@@ -73,9 +73,9 @@ export function SignalJourney() {
               <thead>
                 <tr className="bg-ink-soft text-left text-xs uppercase tracking-wider text-fg/40">
                   <th className="px-6 py-4 font-bold">#</th>
-                  <th className="px-6 py-4 font-bold">Schritt</th>
-                  <th className="px-6 py-4 font-bold">Spezifikation 1</th>
-                  <th className="px-6 py-4 font-bold">Spezifikation 2</th>
+                  <th className="px-6 py-4 font-bold">{t("tableStep")}</th>
+                  <th className="px-6 py-4 font-bold">{t("tableSpec1")}</th>
+                  <th className="px-6 py-4 font-bold">{t("tableSpec2")}</th>
                 </tr>
               </thead>
               <tbody>

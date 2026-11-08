@@ -58,7 +58,7 @@ export default async function KontaktPage() {
               <Phone size={18} className="shrink-0 text-teal" /> +49 162 686 1853
             </span>
             <span className="flex items-center gap-3 text-sm text-fg/75">
-              <Mail size={18} className="shrink-0 text-teal" /> abdel@dsf-media.de
+              <Mail size={18} className="shrink-0 text-teal" /> media.dsf26@gmail.com
             </span>
           </div>
 

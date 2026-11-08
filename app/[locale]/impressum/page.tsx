@@ -25,7 +25,7 @@ export default async function ImpressumPage() {
 
         <Section title={de ? "Kontakt" : "Contact"}>
           <p>{de ? "Telefon" : "Phone"}: +49 162 686 1853</p>
-          <p>E-Mail: abdel@dsf-media.de</p>
+          <p>E-Mail: media.dsf26@gmail.com</p>
         </Section>
 
         <Section title={de ? "Registereintrag" : "Commercial Register"}>

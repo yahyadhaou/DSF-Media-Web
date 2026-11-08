@@ -15,8 +15,8 @@ export default async function DatenschutzPage() {
         <Section title={de ? "1. Verantwortlicher" : "1. Data Controller"}>
           <p>
             {de
-              ? "Verantwortlich für die Datenverarbeitung auf dieser Website ist die DSF Media GmbH, Reuenberg 67, 45357 Essen, E-Mail: abdel@dsf-media.de."
-              : "The data controller for this website is DSF Media GmbH, Reuenberg 67, 45357 Essen, Germany, email: abdel@dsf-media.de."}
+              ? "Verantwortlich für die Datenverarbeitung auf dieser Website ist die DSF Media GmbH, Reuenberg 67, 45357 Essen, E-Mail: media.dsf26@gmail.com."
+              : "The data controller for this website is DSF Media GmbH, Reuenberg 67, 45357 Essen, Germany, email: media.dsf26@gmail.com."}
           </p>
         </Section>
 
@@ -55,8 +55,8 @@ export default async function DatenschutzPage() {
         <Section title={de ? "6. Ihre Rechte" : "6. Your Rights"}>
           <p>
             {de
-              ? "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde. Wenden Sie sich hierzu an abdel@dsf-media.de."
-              : "You have the right to access, rectify, erase and restrict the processing of your personal data, as well as the right to lodge a complaint with a data protection supervisory authority. Please contact abdel@dsf-media.de."}
+              ? "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde. Wenden Sie sich hierzu an media.dsf26@gmail.com."
+              : "You have the right to access, rectify, erase and restrict the processing of your personal data, as well as the right to lodge a complaint with a data protection supervisory authority. Please contact media.dsf26@gmail.com."}
           </p>
         </Section>
 

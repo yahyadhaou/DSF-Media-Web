@@ -2,12 +2,12 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Truck, Wind, Gauge, Drill } from "lucide-react";
+import { Truck, Zap, Gauge, Drill } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type FleetItem = { title: string; description: string };
-const icons = [Truck, Wind, Gauge, Drill];
+const icons = [Truck, Zap, Gauge, Drill];
 
 export function FleetShowcase() {
   const t = useTranslations("fleet");

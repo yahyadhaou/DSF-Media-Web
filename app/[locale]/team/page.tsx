@@ -3,7 +3,7 @@ import { Phone, Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 const CENTRAL_PHONE = "+49 162 686 1853";
-const CENTRAL_EMAIL = "abdel@dsf-media.de";
+const CENTRAL_EMAIL = "media.dsf26@gmail.com";
 
 type Member = {
   initials: string;
@@ -30,7 +30,7 @@ const leadership: Member[] = [
 const technical: Member[] = [
   // { initials: "LH", name: "Lisa Hoffmann", role: "Projektleiterin NE3", note: "12 Jahre Tiefbau & Trassenplanung", gradient: "from-navy-2 to-teal" },
   { initials: "MB", name: "Marco Bergers", role: "Spleißtechniker", note: "Zertifiziert · Fusion & OTDR-Messung", gradient: "from-navy-2 to-teal" },
-  { initials: "YD", name: "Dhaou Yahya", role: "IT techniker und Inhouse-Installation", note: "Koordination mit IT & MDU-Verkabelung & Wohnungswirtschaft ", gradient: "from-navy-2 to-teal" },
+  { initials: "YD", name: "Dhaou Yahya", role: "IT-Techniker & Inhouse-Installation", note: "NE4/NE5-Montage, IT-Koordination & Wohnungswirtschaft", gradient: "from-navy-2 to-teal" },
   // { initials: "SW", name: "Sabine Weiß", role: "Inhouse-Installation", note: "MDU-Verkabelung & Wohnungswirtschaft", gradient: "from-navy-2 to-teal" },
 ];
 
@@ -45,9 +45,6 @@ export default async function TeamPage() {
   return (
     <div className="py-20 lg:py-28">
       <Container className="flex flex-col items-center gap-4 text-center">
-        <span className="rounded-full border border-dashed border-fg/15 px-3 py-1 text-[11px] text-fg/35">
-          {t("placeholderNote")}
-        </span>
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-teal">{t("eyebrow")}</span>
         <h1 className="font-display max-w-2xl text-4xl font-bold text-fg sm:text-5xl">{t("title")}</h1>
         <p className="max-w-lg text-base leading-relaxed text-fg/60">{t("subtitle")}</p>
