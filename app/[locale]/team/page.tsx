@@ -14,7 +14,6 @@ type Member = {
   phone?: string;
   email?: string;
 };
-
 const leadership: Member[] = [
   {
     initials: "DA",
