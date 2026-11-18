@@ -18,8 +18,7 @@ function wrapper(locale: string, bodyHtml: string) {
       ${bodyHtml}
     </div>
     <p style="margin-top:24px;font-size:11px;color:rgba(255,255,255,0.35);">
-      DSF Media GmbH · Reuenberg 67 · 45357 Essen · dsfmediagmbh@gmail.com
-    </p>
+      DSF Media GmbH · Reuenberg 67 · 45357 Essen · media.dsf26@gmail.com
   </div>
 </body>
 </html>`;
