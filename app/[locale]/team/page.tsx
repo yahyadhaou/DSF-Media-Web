@@ -28,7 +28,7 @@ const leadership: Member[] = [
 
 const technical: Member[] = [
   // { initials: "LH", name: "Lisa Hoffmann", role: "Projektleiterin NE3", note: "12 Jahre Tiefbau & Trassenplanung", gradient: "from-navy-2 to-teal" },
-  { initials: "MB", name: "Marco Bergers", role: "Spleißtechniker", note: "Zertifiziert · Fusion & OTDR-Messung", gradient: "from-navy-2 to-teal" },
+  { initials: "MB", name: "Bergers Marco", role: "Spleißtechniker", note: "Zertifiziert · Fusion & OTDR-Messung", gradient: "from-navy-2 to-teal" },
   { initials: "YD", name: "Dhaou Yahya", role: "IT-Techniker & Inhouse-Installation", note: "NE4/NE5-Montage, IT-Koordination & Wohnungswirtschaft", gradient: "from-navy-2 to-teal" },
   // { initials: "SW", name: "Sabine Weiß", role: "Inhouse-Installation", note: "MDU-Verkabelung & Wohnungswirtschaft", gradient: "from-navy-2 to-teal" },
 ];
