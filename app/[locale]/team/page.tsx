@@ -34,7 +34,7 @@ const technical: Member[] = [
 ];
 
 const admin: Member[] = [
-  { initials: "VD", name: "Verena Dhaou", role: "Disposition & 24/7-Einsatz", note: "Koordiniert Notdienst-Einsätze", gradient: "from-navy to-navy-2" },
+  { initials: "VD", name: "Dhaou Verena", role: "Disposition & 24/7-Einsatz", note: "Koordiniert Notdienst-Einsätze", gradient: "from-navy to-navy-2" },
   // { initials: "ED", name: "Elena Dhaou", role: "Kaufmännische Leitung", note: "Abrechnung & Vertragswesen", gradient: "from-navy to-navy-2" },
 ];
 
